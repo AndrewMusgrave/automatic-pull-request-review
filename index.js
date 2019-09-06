@@ -6,11 +6,15 @@ const token = core.getInput('repo-token');
 const octokit = new github.GitHub(token);
 
 console.log('i got ran');
-console.log(JSON.stringify(github.context));
+console.log(JSON.stringify(github.context.payload['pull_request']));
 
 
 (async() => {
-  await octokit.graphql(`mutation {
-    submitPullRequestReview( input: { pullRequestReviewId: "${github.context.payload['pull_request'].base.repo['node_id']}", pullRequestReview: "APPROVE"
-  }) { clientMutationId } }`)
+  try {
+    await octokit.graphql(`mutation {
+      submitPullRequestReview( input: { pullRequestReviewId: "${github.context.payload['pull_request'].base.repo['node_id']}", pullRequestReview: "APPROVE"
+    }) { clientMutationId } }`)
+  } catch (e) {
+    console.error(e)
+  }
 })()
