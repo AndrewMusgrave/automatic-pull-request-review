@@ -11,6 +11,6 @@ console.log(JSON.stringify(github.context));
 
 (async() => {
   await octokit.graphql(`mutation {
-    submitPullRequestReview( input: { clientMutationId: "${github.context.payload.base.repo.node_id}", pullRequestReview: "APPROVE"
+    submitPullRequestReview( input: { clientMutationId: "${github.context.payload['pull_request'].base.repo.node_id}", pullRequestReview: "APPROVE"
   }) { clientMutationId } }`)
 })()
