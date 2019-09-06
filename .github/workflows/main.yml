@@ -9,3 +9,5 @@ jobs:
       - name: Approve pull request
         if: github.event_name == 'pull_request' && github.actor == 'AndrewMusgrave'
         uses: andrewmusgrave/automatic-pull-request-review@master
+    with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
