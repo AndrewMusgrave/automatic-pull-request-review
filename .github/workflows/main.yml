@@ -1,0 +1,11 @@
+name: Automatic pull request review
+
+on: [pull_request]
+
+jobs:
+  automate-project-columns:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Approve pull request
+        if: github.event_name == 'pull_request'
+        uses: andrewmusgrave/automatic-pull-request-review@master
