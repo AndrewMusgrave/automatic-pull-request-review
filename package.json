@@ -1,0 +1,42 @@
+{
+  "name": "automatic-pull-request-review",
+  "version": "0.0.1",
+  "description": "👍 Github action to automate pull requests",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "watch": "ncc build index.js --watch --minify",
+    "build": "ncc build index.js --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewmusgrave/automatic-pull-request-review.git"
+  },
+  "keywords": [
+    "github-actions",
+    "pulls",
+    "request"
+  ],
+  "author": "Andrew Musgrave <andrewdmusgrave@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrewmusgrave/automatic-pull-request-review/issues"
+  },
+  "homepage": "https://github.com/andrewmusgrave/automatic-pull-request-review#readme",
+  "dependencies": {
+    "@actions/core": "^1.0.0",
+    "@actions/github": "^1.0.0"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.20.4",
+    "husky": "^3.0.5"
+  },
+  "files": [
+    "dist/index.js"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build && git add ./dist/index.js"
+    }
+  }
+}
