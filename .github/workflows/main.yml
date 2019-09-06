@@ -7,5 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Approve pull request
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && github.actor == 'AndrewMusgrave'
         uses: andrewmusgrave/automatic-pull-request-review@master
