@@ -15,7 +15,7 @@ console.log(github.context.payload["pull_request"]);
           pullRequestReviewId: "${
             github.context.payload["pull_request"].base.repo["node_id"]
           }",
-          event: "APPROVE"
+          event: APPROVE
         }) {clientMutationId} }`);
   } catch (e) {
     console.error(e);
