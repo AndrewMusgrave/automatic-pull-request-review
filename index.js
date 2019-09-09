@@ -7,12 +7,30 @@ const octokit = new github.GitHub(token);
 
 (async () => {
   try {
-    await octokit.graphql(`mutation {
-      submitPullRequestReview( input: { pullRequestReviewId: "${
-        github.context.payload["pull_request"].base.repo["node_id"]
-      }", pullRequestReview: "APPROVE"
-    }) { clientMutationId } }`);
+    await octokit.graphql(`
+      mutation {
+        submitPullRequestReview(input: {
+          pullRequestReviewId: "${
+            github.context.payload["pull_request"].base.repo["node_id"]
+          }",
+          event: "APPROVE"
+        })}`);
   } catch (e) {
     console.error(e);
   }
 })();
+
+// (async () => {
+//   try {
+//     await octokit.graphql(`
+//       mutation {
+//         submitPullRequestReview(input: {
+//           pullRequestReviewId: "${
+//             github.context.payload["pull_request"].base.repo["node_id"]
+//           }",
+//           pullRequestReview: "APPROVE"
+//         }) { clientMutationId } }`);
+//   } catch (e) {
+//     console.error(e);
+//   }
+// })();
