@@ -13,8 +13,8 @@ const octokit = new github.GitHub(token);
           pullRequestReviewId: "${
             github.context.payload["pull_request"].base.repo["node_id"]
           }",
-          event: "APPROVE"
-        }) {pullRequestReview} }`);
+          event: "approve"
+        }) {clientMutationId} }`);
   } catch (e) {
     console.error(e);
   }
