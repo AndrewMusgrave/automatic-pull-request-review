@@ -18,4 +18,4 @@ const octokit = new github.GitHub(token);
   } catch (e) {
     console.error(e);
   }
-})();
+})()
