@@ -11,3 +11,5 @@ inputs:
   event:
     description: ""
     default: "APPROVE"
+  body:
+    description: ""

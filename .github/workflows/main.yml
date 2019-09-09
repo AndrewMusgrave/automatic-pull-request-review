@@ -12,3 +12,4 @@ jobs:
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           event: REQUEST_CHANGES
+          body: "Changes"

@@ -5,8 +5,11 @@ const token = core.getInput("repo-token");
 
 const octokit = new github.GitHub(token);
 const event = core.getInput("event");
+const body = core.getInput("body");
 
-console.log(github.context.payload["pull_request"]["node_id"]);
+if ((event === "COMMENT" || event === "REQUEST_CHANGES") && !body) {
+  core.error("Needs comment!");
+}
 
 (async () => {
   try {
@@ -15,6 +18,7 @@ console.log(github.context.payload["pull_request"]["node_id"]);
         addPullRequestReview(input: {
           pullRequestId: "${github.context.payload["pull_request"]["node_id"]}",
           event: ${event}
+          body: ${body}
         }) {clientMutationId} }`);
   } catch (e) {
     console.error(e);
