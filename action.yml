@@ -6,4 +6,4 @@ runs:
   main: 'dist/index.js'
 branding:
   icon: 'thumbs-up'
-  color: 'gray-dark'
+  color: 'gray-dark
