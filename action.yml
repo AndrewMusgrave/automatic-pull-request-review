@@ -1,9 +1,13 @@
-name: 'Automatic pull request review'
-description: '👍 Github action to automate pull requests'
-author: 'Andrew Musgrave <andrewdmusgrave@gmail.com>'
+name: "Automatic pull request review"
+description: "👍 Github action to automate pull requests"
+author: "Andrew Musgrave <andrewdmusgrave@gmail.com>"
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node12"
+  main: "dist/index.js"
 branding:
-  icon: 'thumbs-up'
-  color: 'gray-dark'
+  icon: "thumbs-up"
+  color: "gray-dark"
+inputs:
+  event:
+    description: ""
+    default: "APPROVE"

@@ -4,6 +4,7 @@ const github = require("@actions/github");
 const token = core.getInput("repo-token");
 
 const octokit = new github.GitHub(token);
+const event = core.getInput("event");
 
 console.log(github.context.payload["pull_request"]["node_id"]);
 
@@ -13,24 +14,9 @@ console.log(github.context.payload["pull_request"]["node_id"]);
       mutation {
         addPullRequestReview(input: {
           pullRequestId: "${github.context.payload["pull_request"]["node_id"]}",
-          event: APPROVE
+          event: ${event}
         }) {clientMutationId} }`);
   } catch (e) {
     console.error(e);
   }
 })();
-
-// (async () => {
-//   try {
-//     await octokit.graphql(`
-//       mutation {
-//         submitPullRequestReview(input: {
-//           pullRequestReviewId: "${
-//             github.context.payload["pull_request"]["node_id"]
-//           }",
-//           event: APPROVE
-//         }) {clientMutationId} }`);
-//   } catch (e) {
-//     console.error(e);
-//   }
-// })();
