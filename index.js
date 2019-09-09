@@ -21,4 +21,7 @@ octokit
           body: "${body}"
         }) {clientMutationId} }`
   )
-  .catch(err => core.error(err));
+  .catch(err => {
+    core.error(err);
+    core.setFailed(err.message);
+  });
