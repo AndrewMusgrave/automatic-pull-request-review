@@ -23,4 +23,4 @@ if ((event === "COMMENT" || event === "REQUEST_CHANGES") && !body) {
   } catch (e) {
     console.error(e);
   }
-})();
+})()
