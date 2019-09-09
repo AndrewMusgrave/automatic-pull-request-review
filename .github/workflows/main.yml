@@ -11,4 +11,4 @@ jobs:
         uses: andrewmusgrave/automatic-pull-request-review@master
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          event: APPROVE
+          event: REQUEST_CHANGES
