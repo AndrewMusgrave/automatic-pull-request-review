@@ -14,7 +14,7 @@ const octokit = new github.GitHub(token);
             github.context.payload["pull_request"].base.repo["node_id"]
           }",
           event: "APPROVE"
-        })}`);
+        }) {pullRequestReview} }`);
   } catch (e) {
     console.error(e);
   }
