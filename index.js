@@ -5,7 +5,7 @@ const token = core.getInput("repo-token");
 
 const octokit = new github.GitHub(token);
 
-// console.log(github.context.payload["pull_request"]);
+console.log(github.context.payload["pull_request"]["node_id"]);
 
 (async () => {
   try {
