@@ -12,7 +12,9 @@ const octokit = new github.GitHub(token);
     await octokit.graphql(`
       mutation {
         submitPullRequestReview(input: {
-          pullRequestReviewId: "${github.context.payload["pull_request"].id}",
+          pullRequestReviewId: "${
+            github.context.payload["pull_request"]["node_id"]
+          }",
           event: APPROVE
         }) {clientMutationId} }`);
   } catch (e) {
