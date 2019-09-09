@@ -11,13 +11,26 @@ console.log(github.context.payload["pull_request"]["node_id"]);
   try {
     await octokit.graphql(`
       mutation {
-        submitPullRequestReview(input: {
-          pullRequestReviewId: "${
-            github.context.payload["pull_request"]["node_id"]
-          }",
+        addPullRequestReview(input: {
+          pullRequestId: "${github.context.payload["pull_request"]["node_id"]}",
           event: APPROVE
         }) {clientMutationId} }`);
   } catch (e) {
     console.error(e);
   }
 })();
+
+// (async () => {
+//   try {
+//     await octokit.graphql(`
+//       mutation {
+//         submitPullRequestReview(input: {
+//           pullRequestReviewId: "${
+//             github.context.payload["pull_request"]["node_id"]
+//           }",
+//           event: APPROVE
+//         }) {clientMutationId} }`);
+//   } catch (e) {
+//     console.error(e);
+//   }
+// })();
