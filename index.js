@@ -17,7 +17,7 @@ if ((event === "COMMENT" || event === "REQUEST_CHANGES") && !body) {
       mutation {
         addPullRequestReview(input: {
           pullRequestId: "${github.context.payload["pull_request"]["node_id"]}",
-          event: ${event}
+          event: ${event},
           body: ${body}
         }) {clientMutationId} }`);
   } catch (e) {
