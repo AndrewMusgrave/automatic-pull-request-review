@@ -1,20 +1,18 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
+const core = require("@actions/core");
+const github = require("@actions/github");
 
-const token = core.getInput('repo-token');
+const token = core.getInput("repo-token");
 
 const octokit = new github.GitHub(token);
 
-console.log('i got ran');
-console.log(JSON.stringify(github.context.payload['pull_request']));
-
-
-(async() => {
+(async () => {
   try {
     await octokit.graphql(`mutation {
-      submitPullRequestReview( input: { pullRequestReviewId: "${github.context.payload['pull_request'].base.repo['node_id']}", pullRequestReview: "APPROVE"
-    }) { clientMutationId } }`)
+      submitPullRequestReview( input: { clientMutationId: "${
+        github.context.payload["pull_request"].base.repo["node_id"]
+      }", pullRequestReview: "APPROVE"
+    }) { clientMutationId } }`);
   } catch (e) {
-    console.error(e)
+    console.error(e);
   }
-})()
+})();
