@@ -19,4 +19,4 @@ console.log(github.context.payload["pull_request"]["node_id"]);
   } catch (e) {
     console.error(e);
   }
-})();
+})()
