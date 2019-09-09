@@ -20,4 +20,4 @@ console.log(github.context.payload["pull_request"]);
   } catch (e) {
     console.error(e);
   }
-})();
+})()
