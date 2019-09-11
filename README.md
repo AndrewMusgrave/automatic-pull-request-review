@@ -33,7 +33,7 @@ jobs:
 
 These are the options recommended to be changed. For more detailed explanation of the workflow file, check out the [GitHub documentation](https://help.github.com/en/articles/configuring-a-workflow#creating-a-workflow-file).
 
-| Setting      | Description                                      | Values                                           |
+| Setting      | Description                                        | Values                                           |
 | ------------ | ------------------------------------------------ | ------------------------------------------------ |
 | `event`      | The event to perform on the pull request review. | APPROVE \| COMMENT \| DISMISS \| REQUEST_CHANGES |
 | `body`       | The contents of the review body comment.         | String                                           |
