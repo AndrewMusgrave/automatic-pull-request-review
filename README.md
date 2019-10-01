@@ -2,7 +2,7 @@
 
 > 👍 Github action to automate pull requests
 
-This action allows you to use any of the `pull_request` [webhook event](https://help.github.com/en/articles/events-that-trigger-workflows#webhook-events) to automate pull request reviews. For example when a `pull request` is `opened` by `dependabot` automatically prove it.
+This action allows you to use any of the `pull_request` [webhook event](https://help.github.com/en/articles/events-that-trigger-workflows#webhook-events) to automate pull request reviews. For example when a `pull request` is `opened` by `dependabot`, automatically approve it.
 
 ## Usage
 
