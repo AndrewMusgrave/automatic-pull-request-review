@@ -1,6 +1,6 @@
 {
   "name": "automatic-pull-request-review",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "👍 Github action to automate pull requests",
   "private": true,
   "main": "dist/index.js",
