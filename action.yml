@@ -13,3 +13,6 @@ inputs:
     default: 'APPROVE'
   body:
     description: 'The contents of the review body comment. Required when event is COMMENT or REQUEST_CHANGES.'
+  repo-token:
+    description: 'The GH_TOKEN secret can be passed in using {{ secrets.GH_TOKEN }}'
+    required: true
