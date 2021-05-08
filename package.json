@@ -1,6 +1,6 @@
 {
   "name": "automatic-pull-request-review",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "👍 Github action to automate pull requests",
   "private": true,
   "main": "dist/index.js",
@@ -24,13 +24,14 @@
   },
   "homepage": "https://github.com/andrewmusgrave/automatic-pull-request-review#readme",
   "dependencies": {
-    "@actions/core": "^1.0.0",
-    "@actions/github": "^1.0.0"
+    "@actions/core": "^1.2.7",
+    "@actions/github": "^4.0.0"
   },
   "devDependencies": {
     "@types/node": "^12.7.4",
-    "@zeit/ncc": "^0.20.4",
-    "husky": "^3.0.5"
+    "@vercel/ncc": "^0.28.5",
+    "husky": "^3.0.5",
+    "typescript": "^4.2.4"
   },
   "files": [
     "dist/index.js"
