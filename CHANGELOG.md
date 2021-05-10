@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 0.0.5 - 2021-05-10
+
+- Fix broken imports in v0.0.4
+
 ## 0.0.4 - 2021-05-07
 
 - Update dependencies
