@@ -25,7 +25,8 @@
   "homepage": "https://github.com/andrewmusgrave/automatic-pull-request-review#readme",
   "dependencies": {
     "@actions/core": "^1.2.7",
-    "@actions/github": "^4.0.0"
+    "@actions/github": "^4.0.0",
+    "@octokit/webhooks": "^9.6.1"
   },
   "devDependencies": {
     "@types/node": "^12.7.4",
